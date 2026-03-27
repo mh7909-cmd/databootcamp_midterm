@@ -3,8 +3,6 @@ Socioeconomic Drivers of NYPD Arrests: A Comparative Analysis
 
 Authors: Mayank Hinduja & Mauurya Desai
 
-Course: Data Bootcamp Midterm Project
-
 1. Executive Summary
 
 The goal of this project was to move beyond simple crime statistics and investigate the underlying socioeconomic factors that correlate with law enforcement activity across New York City’s five boroughs. While many public reports focus strictly on the number of arrests, our analysis integrates data from the U.S. Census and local economic indicators to provide a more holistic view of urban policing.
