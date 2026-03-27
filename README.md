@@ -9,6 +9,10 @@ The goal of this project was to move beyond simple crime statistics and investig
 
 By building a custom data pipeline to interface with the NYPD’s official records, we analyzed a high-volume sample of over 5,000 arrests. We then merged this data with key metrics such as poverty rates, median household income, and educational attainment. Our findings, visualized through a comprehensive eight-graph executive dashboard, suggest that arrest intensity and the severity of charges (felonies vs. misdemeanors) are not distributed randomly; they follow measurable patterns linked to a borough’s economic health.
 
+Executive Dashboard:
+<img width="1784" height="2472" alt="image" src="https://github.com/user-attachments/assets/55108c32-8c40-43b0-a0dc-6e8992909db0" />
+
+
 2. Project Motivation and Research Questions
 As students of business and data science, we were interested in how "raw" government data can be transformed into actionable social insights. We centered our research on three primary questions:
 
