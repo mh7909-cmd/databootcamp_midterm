@@ -1,5 +1,6 @@
 # databootcamp_midterm
 Socioeconomic Drivers of NYPD Arrests: A Comparative Analysis
+
 Authors: Mayank Hinduja & Mauurya Desai
 
 Course: Data Bootcamp Midterm Project
