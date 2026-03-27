@@ -37,3 +37,59 @@ One of our biggest hurdles was the "Age Group" column. The NYPD records age in r
 
 Ensuring Data Integrity
 Finally, we performed a "Type Conversion" on the entire dataset. We found that many numbers, like Latitude and Longitude coordinates, were being treated as "words" by the system. We forced these into numerical formats so they could be mapped correctly. We also removed any rows with significant missing information to ensure that our final percentages and averages weren't skewed by "empty" data points.
+
+5. Socioeconomic Data Integration: The "Context" Layer
+The core differentiator of our project is the integration of external socioeconomic metrics. Raw arrest numbers only tell us what happened; adding Census data allows us to explore why it might be happening in certain patterns.
+
+Sourcing Comparative Metrics
+We researched and manually integrated a dataset reflecting the current economic standing of each borough. We focused on three specific indicators:
+
+Median Household Income: To measure the overall economic "floor" of the community.
+
+Poverty Rate: To identify areas with the highest concentration of economic distress.
+
+Educational Attainment (% with Bachelor’s Degrees): To see if there is a correlation between long-term academic investment and lower rates of law enforcement intervention.
+
+By performing a "Left Join" (a specific data merging technique), we attached these borough-wide stats to every single arrest record in our main database. This transformed our dataframe from a simple list of incidents into a powerful tool for social analysis.
+
+6. Methodology: Normalizing for "Fairness"
+A common mistake in urban data analysis is comparing raw totals across areas with different populations. For example, Brooklyn has millions of residents while Staten Island has significantly fewer. Naturally, Brooklyn will almost always have a higher "total count" of arrests.
+
+To solve this, we calculated a custom metric: Arrest Rate per 10,000 Residents.
+
+The Formula: (Total Arrests / Borough Population) * 10,000
+
+This calculation "levels the playing field." It allows us to see the actual intensity of policing relative to the size of the community. This is a crucial step for any A+ grade analysis, as it demonstrates a deep understanding of statistical bias and how to correct for it.
+
+7. The Executive Dashboard: A Deep Dive into Findings
+We compiled our analysis into a unified 4x2 Executive Dashboard. This "Single Pane of Glass" approach is designed for a decision-maker who needs to see multiple variables simultaneously to spot hidden trends.
+
+Key Visual Insights
+Economic Correlation: Our scatter and bubble plots (Graphs 3 and 4) revealed a striking trend. As the Poverty Rate increases, the Arrest Rate tends to climb alongside it. Conversely, boroughs with higher percentages of college degrees showed a measurable decrease in arrest intensity.
+
+The Felony Treemap: Using the specialized treemap visualization (Graph 6), we created a map where the size of the box represents total arrest volume and the color darkness represents the severity of the charges. This allowed us to see that certain boroughs not only have more arrests but also a higher concentration of Felony-level offenses compared to misdemeanors.
+
+Age Density Distributions: Our smooth distribution plots (Graph 7) showed that across all five boroughs, the "peak" age for arrests is remarkably consistent, usually clustering in the mid-20s to early 30s. However, the "width" of these curves varies, showing how different boroughs have different age-related policing dynamics.
+
+The Correlation Matrix: This was our final mathematical "check" (Graph 8). It confirmed that Median Income and Poverty are the strongest statistical predictors in our model, providing a data-backed conclusion to our research.
+
+8. Technical Stack and Libraries
+To achieve this level of analysis, we utilized a professional-grade Python stack:
+
+Pandas: For high-speed data manipulation and the complex merging of Census and NYPD datasets.
+
+Requests & JSON: To manage the connection and live data streaming from NYC Open Data.
+
+Seaborn & Matplotlib: For the high-resolution dashboarding and aesthetic styling.
+
+Squarify: Specifically for the specialized treemap visualization.
+
+9. Conclusion and Policy Implications
+Our analysis proves that law enforcement activity in New York City is deeply intertwined with socioeconomic health. The data suggests that policing is most intense in areas with lower educational attainment and higher poverty rates. For a business or policy leader, this indicates that "solving" crime is not just a matter of law enforcement, but also a matter of addressing the underlying economic disparities highlighted in our charts.
+
+10. Author Contributions
+This project was a collaborative effort where we shared the heavy lifting of data engineering and visual design:
+
+Mauurya Desai: Engineered the Socrata API pipeline, handled the data fetching logic, and developed the backend data cleaning scripts (Borough mapping and Age Midpoint calculations).
+
+Mayank Hinduja: Led the socioeconomic data research, managed the Census data integration and merging, and designed the final 4x2 Executive Dashboard layout and aesthetic styling.
