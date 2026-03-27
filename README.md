@@ -33,7 +33,7 @@ Furthermore, we used specific filtering language within our request to target th
 
 4. Data Transformation and "Cleaning"
    
-Raw data from the NYPD arrives with shortened codes, missing values, and formats that computers cannot easily read for math. We spent a significant portion of our development time on "Data Cleaning"—the invisible work that makes the final graphs possible.
+Raw data from the NYPD arrives with shortened codes, missing values, and formats that computers cannot easily read for math. We spent a significant portion of our development time on "Data Cleaning", the invisible work that makes the final graphs possible.
 
 Standardizing the Geography
 The NYPD uses internal shorthand for the boroughs (e.g., 'K' for Brooklyn or 'Q' for Queens). We built a translation tool (a mapping dictionary) that converted those codes into full, standardized names. This was the "key" that allowed us to successfully merge our two datasets later on.
